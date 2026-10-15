@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>happy birthday 🤍</title>
+  <style>
+    body{
+      margin:0; font-family: 'Arial', sans-serif; background:#0f0f0f; color:white;
+      display:flex; justify-content:center; align-items:center; height:100vh; text-align:center;
+    }
+    .page{display:none; padding:20px;}
+    .page.active{display:block;}
+    button{
+      margin-top:25px; padding:12px 22px; border:none; border-radius:30px;
+      background:#ff5fa2; color:white; font-size:16px; cursor:pointer;
+    }
+    button:hover{opacity:0.85}
+    .cake{font-size:90px}
+    .gift{font-size:90px}
+    .bear{font-size:90px}
+    .boom{font-size:80px; animation: boom 0.8s ease-in-out}
+    @keyframes boom{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+    .card{max-width:600px; line-height:1.6; font-size:15px}
+  </style>
+</head>
+<body><audio id="music" src="https://archive.org/download/a-thousand-years_202110/A%20Thousand%20Years.mp3" loop></audio>
+
+<div class="page active" id="p1">
+  <h2>hayo kepo ya? xixi.<br>yaudah lanjutin kepo nya 😜</h2>
+  <button onclick="next(2)">next</button>
+</div><div class="page" id="p2">
+  <h1>10 november 🥳🥹</h1>
+  <button onclick="boom()">💣</button>
+</div><div class="page" id="p3">
+  <div class="boom">💥</div>
+  <div class="cake">🎂</div>
+  <p>lilin nya masih nyala ✨</p>
+  <button onclick="next(4)">tiup sayangg</button>
+</div><div class="page" id="p4">
+  <div class="cake">🎂</div>
+  <p>lilin nya mati 🕯️</p>
+  <button onclick="next(5)">lanjut</button>
+</div><div class="page" id="p5">
+  <div class="gift">🎁</div>
+  <button onclick="next(6)">bukaa 🫶</button>
+</div><div class="page" id="p6">
+  <div class="bear">🧸</div>
+  <p>hadiah kecil tapi penuh cinta 🤍</p>
+  <button onclick="playMusic(); next(7)">lanjut</button>
+</div><div class="page" id="p7">
+  <div class="card">
+    haloo gantengkuuu, sekarang hari apayaaa 🤔🤔..<br><br>
+    OHH IYAAAAA HARI ULANG TAUN NYA PACARKU YAAA? hbd sayangkuuu, cintakuu, gantengkuuu 🤍<br><br>
+    sekarang perasaan kamu seneng gasiii karna suda umur 16 tahun? umurnya nambah 1 taun dan tambah lebih tuaaa 😆<br><br>
+    dihari ulang taun kamu inii, kamu berdoa banyak banyak yyaa? aku juga selalu do'ain kamu disini, agar kamu lebih baik, lebih dewasa, dan lebih bahagiaaa. panjang umur, sehat, jangan kecapean yaa 🫶<br><br>
+    makasiii yaa sudah bertahan sejauh ini. pacar siapa sih koo hebatt sekaliii 😭 i'm proud of you gantengkuuu 👏🏻👏🏻<br><br>
+    makasiii juga masih mau sama aku. kedepannya kita sama sama improve diri yaaa, pelan pelan 🤍<br><br>
+    POKONYAAAA HAPPY BIRTHDAY SAYANGKU CINTAKUUUU GANTENGKUUU 🤍🤍
+  </div>
+  <button onclick="next(8)">akhir</button>
+</div><div class="page" id="p8">
+  <h1>i love u so much<br>than anything else 🤍</h1>
+</div><script>
+  function next(n){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('p'+n).classList.add('active');
+  }
+  function boom(){ next(3); }
+  function playMusic(){ document.getElementById('music').play(); }
+</script></body>
+</html>
